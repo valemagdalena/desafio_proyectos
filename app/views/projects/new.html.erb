@@ -1,0 +1,25 @@
+<%= form_with(model: @project, local:true) do |f| %>
+    <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </div>
+     <div class="form-group">
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+       <div class="form-group">
+        <%= f.label :status %>
+        <%= f.select :status, options_for_select(Project.statuses.keys) %>
+    </div>
+       <div class="form-group">
+        <%= f.label :initial_date %>
+        <%= f.date_field :initial_date %>
+    </div>
+        <div class="form-group">
+        <%= f.label :finish_date %>
+        <%= f.date_field :finish_date %>
+    </div>
+
+    <%= f.submit "crear proyecto", class: "btn btn-success" %>
+
+<% end %>

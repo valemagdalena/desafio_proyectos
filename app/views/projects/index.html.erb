@@ -1,0 +1,43 @@
+<center>
+    <h1>Crea tu proyecto</h1>
+<form>
+        <div class="form-group col-md-4">
+            <label for="inputState">Filtra por estado del proyecto</label>
+            <select id="inputState" class="form-control" name="state">
+                <option value="0">Propuesta</option>
+                <option value="1">En Progreso</option>
+                <option value="2">Terminado</option>
+                <option value="">Ver todo</option>
+            </select>
+        </div>
+    <button type="submit" class="btn btn-info">Filtrar</button>
+</form>
+
+<br>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Descripcion</th>
+      <th scope="col">Status</th>
+      <th scope="col">Fecha de inicio</th>
+      <th scope="col">Fecha de termino</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @project.each do |project| %>
+    <tr>
+    <td><%= project.id %></td>
+    <td><%= project.name %></td>
+    <td><%= project.description %></td>
+    <td><%= project.status %></td>
+    <td><%= project.initial_date %></td>
+    <td><%= project.finish_date %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Nuevo post", projects_new_path, class: "btn btn-info" %>

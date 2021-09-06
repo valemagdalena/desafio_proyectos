@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DesafioProyecto</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-light bg-light justify-content-between">
+    <a class="navbar-brand">Navegación</a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search"
+      placeholder="Search" aria-label="Search" name="email">
+      <button class="btn btn-outline-success my-2 my-sm-0"
+      type="submit">Search</button>
+    </form>
+  </nav>
+
+  <div class="container">
+    <%= yield %>
+    </div>
+  </body>
+</html>
